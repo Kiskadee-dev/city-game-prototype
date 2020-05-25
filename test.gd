@@ -1,5 +1,7 @@
 extends Spatial
 
-
+var dict = {"Type":"City", "Position":[10,0,-10], "Player":"ST"}
 func _ready():
-	print(floor(1.5))
+	print("a")
+	
+	print(JSON.print(dict))
