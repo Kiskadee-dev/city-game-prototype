@@ -21,6 +21,7 @@ config/icon="res://icon.png"
 [autoload]
 
 ClickManager="*res://ClickManager.gd"
+SelectionManager="*res://Selection_manager.gd"
 
 [rendering]
 
