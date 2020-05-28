@@ -1,14 +1,18 @@
 extends Node
 
-var entityDB = load("res://PackedEntitiesManager.gd").new()
+var entityDB:Dictionary = {
+"city":"res://CityEntity.tscn",
+"constructor":"res://UnitEntity.tscn"
+}
+
 var selected:String = "" #Entity ID
 var previewObject:Node = null
 
 func create_preview_obj(ID:String)->Node:
-	if not entityDB.entities.has(ID):
+	if not entityDB.has(ID):
 		return null
 	var root = get_tree().root
-	previewObject = load(entityDB.entities[ID]).instance()
+	previewObject = load(entityDB[ID]).instance()
 	root.add_child(previewObject)
 	return previewObject
 

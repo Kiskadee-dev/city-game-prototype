@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 
 ClickManager="*res://ClickManager.gd"
 SelectionManager="*res://Selection_manager.gd"
+DB="*res://DB.gd"
 
 [rendering]
 

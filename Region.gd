@@ -1,24 +1,25 @@
-extends MeshInstance
+extends Spatial
 
+export var RegionID:Vector3 = Vector3()
 onready var MapData = $MapData
-var entities:Dictionary = {} #Holds the spawned entities of this region
+var entities:Array = [] #Holds the spawned entities of this region
 
 #Handles spawning stuff on this region
 func add_entity(pack:PackedScene, pos:Vector3)->bool:
-	if entities.has(ClickManager.to_grid(pos)):
-		return false
 	var entity = pack.instance()
+	add_child(entity)
 	entity.translation = ClickManager.to_grid(pos)
-	entities[ClickManager.to_grid(pos)] = entity
+	var index = len(entities)
+	entities.append({"id":index+1, "position":ClickManager.to_grid(pos), "entity":entity})
 	return true
 
-func remove_entity(pos:Vector3)->bool:
-	if not entities.has(ClickManager.to_grid(pos)):
-		return false
-	var entity = entities[ClickManager.to_grid(pos)]
-	entity.queue_free()
-	entities.erase(ClickManager.to_grid(pos))
-	return true
+func remove_entity(id:int)->bool:
+	for i in entities:
+		if i["id"] == id:
+			i["entity"].queue_free()
+			entities.erase(i)
+			return true
+	return false
 
 func _ready():
 	pass
