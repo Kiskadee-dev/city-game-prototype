@@ -15,24 +15,24 @@ func _ready():
 func load_region_data():
 	if DB.Region.has(Region.RegionID):
 		for grids in DB.Grid:
-			if grids["fk_region"] == Region.RegionID:
-				for Entidade in DB.Entidade:
-					if Entidade["fk_grid"] == grids["id"]:
-						#Verifica se é unidade ou cidade
-						for Cidade in DB.Cidade:
-							if Cidade["fk_eid"] == Entidade["id"]:
+			if DB.Grid[grids]["fk_region"] == Region.RegionID:
+				for Entidade in DB.EntidadeReside:
+					if DB.EntidadeReside[Entidade]["gid"] == grids:
+						match DB.Entidade[Entidade]["tipo"]:
+							"cidade":
 								print("City in DB!")
 								var city = load(SelectionManager.entityDB["city"])
-								var position = Entidade["position"]
+								var position = DB.Entidade[Entidade]["position"]
 								Region.add_entity(city, position)
 								pass #Spawn city
-						for Unidade in DB.Unidade:
-							if Unidade["fk_eid"] == Entidade["id"]:
+							"unidade":
 								var Unit = load(SelectionManager.entityDB["constructor"])
-								var position = Entidade["position"]
+								var position = DB.Entidade[Entidade]["position"]
 								Region.add_entity(Unit, position)
 								print("Unit in DB!")
 								pass #Spawn Unit
+							_:
+								printerr("Coisa de tipo invalido")
 
 func get_encoded_at(key:Vector3)->Node:
 	if MapData.has(key):

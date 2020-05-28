@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Lil House.tscn" type="PackedScene" id=1]
+
+[node name="VillageEntity" type="Spatial"]
+
+[node name="Lil House" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.12177, 0, 0, 0, 0.12177, 0, 0, 0, 0.12177, -0.361152, -0.883184, -0.515026 )
+
+[node name="Lil House2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.107501, 0, 0.0571954, 0, 0.12177, 0, -0.0571954, 0, 0.107501, 0.480952, -0.883184, -0.0298733 )
+
+[node name="Lil House3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.0641401, 0, -0.103508, 0, 0.12177, 0, 0.103508, 0, 0.0641401, -0.380982, -0.883184, 0.438806 )

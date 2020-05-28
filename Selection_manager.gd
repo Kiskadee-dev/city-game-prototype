@@ -1,7 +1,7 @@
 extends Node
 
 var entityDB:Dictionary = {
-"city":"res://CityEntity.tscn",
+"city":"res://VillageEntity.tscn",
 "constructor":"res://UnitEntity.tscn"
 }
 
