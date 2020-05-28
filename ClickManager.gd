@@ -5,7 +5,7 @@ signal clicked(pos)
 var last_click_pos:Vector3
 var last_hover_pos:Vector3
 
-var grid_step = 1.0
+var grid_step = 2.0
 func emit_click(pos:Vector3):
 	emit_signal("clicked", to_grid(pos))
 
