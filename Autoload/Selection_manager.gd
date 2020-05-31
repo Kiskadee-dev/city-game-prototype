@@ -1,8 +1,8 @@
 extends Node
 
 var entityDB:Dictionary = {
-"city":"res://VillageEntity.tscn",
-"constructor":"res://UnitEntity.tscn"
+"city":"res://Entities/Village/VillageEntity.tscn",
+"constructor":"res://Entities/Unit/UnitEntity.tscn"
 }
 
 var selected:String = "" #Entity ID

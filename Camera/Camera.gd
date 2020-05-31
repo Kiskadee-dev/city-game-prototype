@@ -1,6 +1,6 @@
 extends Camera
 
-export (PackedScene) var testBuilding:PackedScene = load("res://UnitEntity.tscn")
+export (PackedScene) var testBuilding:PackedScene = load("res://Entities/Unit/UnitEntity.tscn")
 var movement_vect: Vector3
 var zoom_vect = 0 #local z of camera
 var zoom: float = 0

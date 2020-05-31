@@ -16,13 +16,14 @@ _global_script_class_icons={
 [application]
 
 config/name="CityPrototype"
+run/main_scene="res://Game Scenes/Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-ClickManager="*res://ClickManager.gd"
-SelectionManager="*res://Selection_manager.gd"
-DB="*res://DB.gd"
+ClickManager="*res://Autoload/ClickManager.gd"
+SelectionManager="*res://Autoload/Selection_manager.gd"
+DB="*res://Autoload/DB.gd"
 
 [rendering]
 
